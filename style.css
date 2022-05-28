@@ -1,5 +1,35 @@
 .container {
 	display:grid;
-	grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
-	grid-column-gap:5px;
+	grid-row: span 2 / auto;
+	grid-column: span 2/auto;
+	column-count: 5;
+	column-gap: 5px;
+	row-gap: 5px;
+	grid-template-columns: repeat(5, 280px);
+}
+@media (max-width: 1200px) {
+	.container {
+		column-count: 4;
+		grid-template-columns: repeat(4, 280px);
+		
+	}
+}
+
+@media (max-width: 740px) {
+	.container {
+		column-count: 3;
+		grid-template-columns: repeat(3, 280px);
+		
+	}
+}@media (max-width: 560px) {
+	.container {
+		column-count: 2;
+		grid-template-columns: repeat(2, 280px);
+	}
+}
+@media (max-width: 280px) {
+	.container {
+		column-count: 1;
+		grid-template-columns: repeat(1, 280px);
+	}
 }

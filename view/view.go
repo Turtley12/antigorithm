@@ -20,7 +20,7 @@ func DisplayFeed(videos []feed.Video) {
 		video_thumb := document.Call("createElement", "img")
 		video_thumb.Call("setAttribute", "src", video_info.Group.Thumbnail.URL)
 
-		//video_thumb.Call("setAttribute", "width", getThumbWidth(video_info))
+		video_thumb.Call("setAttribute", "width", getThumbWidth(video_info))
 		video_thumb.Call("setAttribute", "height", getThumbWidth(video_info))
 		video_div.Call("appendChild", video_thumb)
 
