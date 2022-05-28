@@ -14,6 +14,9 @@ func DisplayFeed(videos []feed.Video) {
 	container := document.Call("getElementById", "container")
 
 	for _, video_info := range videos {
+		video_hyperlink := document.Call("createElement", "a")
+		video_hyperlink.Call("setAttribute", "href", video_info.Link.Href)
+
 		video_div := document.Call("createElement", "div")
 		video_div.Call("setAttribute", "id", video_info.ID)
 		video_div.Call("setAttribute", "class", "video")
@@ -27,7 +30,8 @@ func DisplayFeed(videos []feed.Video) {
 		video_title.Call("appendChild", text)
 		video_div.Call("appendChild", video_title)
 
-		container.Call("appendChild", video_div)
+		video_hyperlink.Call("appendChild", video_div)
+		container.Call("appendChild", video_hyperlink)
 	}
 
 }

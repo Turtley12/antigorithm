@@ -29,5 +29,10 @@ html,body {
 body {
 	color:#FFFFFF;
 	background-color:#212121;
-	
+	font-family: 'Nunito', sans-serif;
+	font-size: 20px;
+}
+a {
+	text-decoration:none;
+	color: inherit;
 }
