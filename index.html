@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Antigorithm - Videos YOU want to watch</title>
+    <meta charset="utf8">
+    <link href="style.css" rel="stylesheet">
+    <script src="wasm_exec.js"></script>
+		<script>
+ 			const go = new Go();
+			WebAssembly.instantiateStreaming(fetch("antigorithm.wasm"), go.importObject).then((result) => {
+		    	go.run(result.instance);
+			});
+		</script>
+  </head>
+  <body>
+    <div class="container" id="container">
+      
+    </div>
+  </body>
+
+</html>
