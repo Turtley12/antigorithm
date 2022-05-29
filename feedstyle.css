@@ -20,10 +20,10 @@
 	overflow-wrap: break-word;
 }
 
-.video img {
+/*.video img {
 	max-width: 100%;
 	min-width: 240px;
-}
+}*/
 
 html,body {
 	height:100%;
