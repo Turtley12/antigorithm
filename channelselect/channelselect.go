@@ -54,8 +54,10 @@ func GetUserSelection() {
 		}
 	}
 	url := createLink(userchannels)
-	clipboard := js.Global().Get("navigator").Get("clipboard")
-	clipboard.Call("writeText", js.ValueOf(url))
+
+	window := js.Global().Get("window")
+	location := window.Get("location")
+	location.Call("assign", url)
 
 }
 
