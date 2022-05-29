@@ -32,8 +32,6 @@ func GetUserFeed(channels []string) []Video {
 	var videos_out []Video
 	for _, channel := range feeds {
 		for _, video := range channel.Video {
-			fmt.Println(video.Title)
-
 			// TODO actually rank videos
 			videos_out = append(videos_out, video)
 		}
