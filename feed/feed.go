@@ -29,12 +29,15 @@ func GetUserFeed(channels []string) []Video {
 	}
 
 	//iterate through each video and give it a ranking
-	var videos_out [][]Video
+	videos_out := make([][]Video, 15)
+	for i := range videos_out {
+		videos_out[i] = make([]Video, len(channels))
+	}
 
 	for _, channel := range feeds {
 		for i, video := range channel.Video {
 			// TODO actually rank videos
-			videos_out = append([i]videos_out, video)
+			videos_out[i] = append(videos_out[i], video)
 		}
 	}
 	var videos_out_1d []Video
