@@ -5,15 +5,26 @@ import (
 	"fmt"
 	"io"
 	"net/http"
-	//"syscall/js"
+	"syscall/js"
 )
 
 func CreateButtons() {
 	channels := getChannels()
 	fmt.Println(channels)
-	/*selectiondiv := js.Global().Get("document").Call("findElementById", "selection")
 	document := js.Global().Get("document")
-	for channel, _ := ke*/
+	selectiondiv := document.Call("getElementById", "selection")
+	fieldset := document.Call("createElement", "fieldset")
+
+	for name, _ := range channels {
+		check := document.Call("createElement", "input")
+		check.Call("setAttribute", "type", "radio")
+		check.Call("setAttribute", "name", "channel_slect")
+		check.Call("setAttribute", "value", name)
+		text := document.Call("createTextNode", name)
+		check.Call("appendChild", text)
+		fieldset.Call("appendChild", check)
+	}
+	selectiondiv.Call("appendChild", fieldset)
 }
 
 func GetUserSelection() {
