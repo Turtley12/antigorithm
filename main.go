@@ -17,7 +17,7 @@ func main() {
 
 	pathname := js.Global().Get("window").Get("location").Get("pathname").String()
 	//fmt.Println("pathname: " + pathname)
-	if pathname == "/userfeed.html" || pathname == "/userfeed" {
+	if strings.Contains(pathname, "/userfeed") {
 		userFeed()
 	} else {
 		home()
