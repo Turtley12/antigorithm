@@ -26,6 +26,7 @@ func DisplayFeed(videos []feed.Video) {
 		video_div.Call("appendChild", video_thumb)
 
 		video_title := document.Call("createElement", "figcaption")
+		video_title.Call("setAttribute", "class", "caption")
 		text := document.Call("createTextNode", video_info.Group.Title)
 		video_title.Call("appendChild", text)
 		video_div.Call("appendChild", video_title)
