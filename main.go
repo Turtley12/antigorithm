@@ -16,7 +16,7 @@ func main() {
 	c := make(chan struct{}, 0)
 
 	pathname := js.Global().Get("window").Get("location").Get("pathname").String()
-	//fmt.Println("pathname: " + pathname)
+	fmt.Println("pathname: " + pathname)
 	if strings.Contains(pathname, "/userfeed") {
 		userFeed()
 	} else {
