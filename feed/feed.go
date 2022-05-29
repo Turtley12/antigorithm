@@ -29,14 +29,22 @@ func GetUserFeed(channels []string) []Video {
 	}
 
 	//iterate through each video and give it a ranking
-	var videos_out []Video
+	var videos_out [][]Video
+
 	for _, channel := range feeds {
-		for _, video := range channel.Video {
+		for i, video := range channel.Video {
 			// TODO actually rank videos
-			videos_out = append(videos_out, video)
+			videos_out = append([i]videos_out, video)
 		}
 	}
-	return videos_out
+	var videos_out_1d []Video
+	for _, videos := range videos_out {
+		for _, video := range videos {
+			videos_out_1d = append(videos_out_1d, video)
+		}
+	}
+
+	return videos_out_1d
 }
 
 func DownloadRSS(channelid string) Feed {
