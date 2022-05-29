@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"syscall/js"
 
+	"github.com/turtley12/antigorithm/channelselect"
+
 	"github.com/turtley12/antigorithm/view"
 
 	//"fmt"
@@ -26,5 +28,5 @@ func userFeed() {
 	view.DisplayFeed(feed.GetUserFeed(userchannels))
 }
 func home() {
-
+	channelselect.CreateButtons()
 }
